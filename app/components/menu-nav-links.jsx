@@ -8,12 +8,13 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
+import { Truck } from "lucide-react";
 
 const MenuNavLink = ({ categories }) => {
   return (
     <div className="hidden lg:block">
       <Separator className={"w-full"} />
-      <div className=" px-10 md:px-20 py-3 ">
+      <div className=" px-10 md:px-20 py-3 flex justify-between items-center">
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
@@ -71,6 +72,14 @@ const MenuNavLink = ({ categories }) => {
             </NavigationMenuItem> */}
           </NavigationMenuList>
         </NavigationMenu>
+
+
+        <div className="flex justify-between items-center">
+          <Link href={"/pages/regarding-delivery"} className="flex gap-2 items-center">
+            <Truck size={28} color="#525252"/>
+            <span>Delivery Details</span>
+          </Link>
+        </div>
       </div>
     </div>
   );

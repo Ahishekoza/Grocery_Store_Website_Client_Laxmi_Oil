@@ -96,6 +96,11 @@
   @apply cursor-pointer hover:text-blue-400 transition-all;
 }
 
-.underline_categories {
+.underline_categories,
+.underline_products {
   @apply cursor-pointer hover:underline transition-all duration-300 ease-in-out;
+}
+
+.common_transition{
+  @apply transition-all duration-300 ease-in-out
 }

@@ -66,7 +66,7 @@ const categories = [
 const Header = () => {
   return (
     <div className="w-full bg-slate-100 border-b border-neutral-300">
-      <div className=" px-10 md:px-20   py-10">
+      <div className=" px-5 sm:px-10 lg:px-20    py-10">
         {/* Mobile Nav */}
         <MobileNav />
         <WebNav />
