@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 const ProductDisplayCard = ({ product }) => {
   return (
     <div
-      className="flex flex-col gap-1 w-full h-full relative  px-1   py-2"
+      className="flex flex-col gap-1 w-full h-full relative  px-1   py-1"
     >
       <Link
         href={product.href}
@@ -22,7 +22,7 @@ const ProductDisplayCard = ({ product }) => {
           alt="best_seller"
         />
       </Link>
-      <div className="flex flex-col gap-2 md:gap-2 justify-center items-center my-2 h-28 md:h-32 lg:h-24 overflow-hidden ">
+      <div className="flex flex-col gap-2 md:gap-2 justify-center items-center my-2 md:mb-2  h-28 md:h-32  overflow-hidden ">
         <span className="font-semibold text-lg">{product.price} with tax</span>
         <span className=" text-sm  text-center flex flex-wrap  md:text-lg underline_products font-bold">
           {product.name}

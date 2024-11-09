@@ -9,7 +9,7 @@ const bestSeller = [
     vegan: true,
     name: "(Haldiram)GulabJam 1Kg",
     price: 800,
-    href:"/collections/products/gulabjam"
+    href:""
   },
   {
     sellerImage: "/bannerImages/BhelPuri.webp",
@@ -17,7 +17,7 @@ const bestSeller = [
     vegan: true,
     name: "(Haldiram)BhelPuri 1Kg",
     price: 600,
-     href:"/collections/products/bhelpuri"
+    href:""
   },
   {
     sellerImage: "/bannerImages/best_seller1.webp",
@@ -25,7 +25,7 @@ const bestSeller = [
     vegan: true,
     name: "(GITS)Veg Biryani 265g",
     price: 350,
-    href:"/collections/products/gits_biryani"
+    href:""
   },
   {
     sellerImage: "/bannerImages/diyaset_2.webp",
@@ -33,7 +33,7 @@ const bestSeller = [
     vegan: true,
     name: "Diya(Indian Lamp) Set",
     price: 1350,
-    href:"/collections/products/diyaset"
+    href:""
   },
   {
     sellerImage: "/bannerImages/Ambika_Tea.webp",
@@ -41,7 +41,7 @@ const bestSeller = [
     vegan: true,
     name: "(GITS)Assam Tea 500g",
     price: 700,
-    href:"/collections/products/ambika_tea",
+    href:"/collections/top-seller/products/Tea",
     soldOut: false
   },
 ];

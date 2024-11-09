@@ -4,10 +4,11 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import MobileFilterSort from "../components/mobile-filter-sort";
 import ProductDisplayCard from "@/app/components/display-card";
+import WebFilterSort from "../components/web-filter-sort";
 
 const bestSeller = [
   {
-    sellerImage: "/bannerImages/GulabJam.webp",
+    sellerImage: "/rice_dal/AmbikaBasmati5kg.avif",
     dry: false,
     vegan: true,
     name: "(Haldiram)GulabJam 1Kg",
@@ -15,7 +16,7 @@ const bestSeller = [
     href: "/collections/products/gulabjam",
   },
   {
-    sellerImage: "/bannerImages/BhelPuri.webp",
+    sellerImage: "/rice_dal/kabulichane.avif",
     dry: true,
     vegan: true,
     name: "(Haldiram)BhelPuri 1Kg",
@@ -23,7 +24,7 @@ const bestSeller = [
     href: "/collections/products/bhelpuri",
   },
   {
-    sellerImage: "/bannerImages/best_seller1.webp",
+    sellerImage: "/rice_dal/MasoorDal.avif",
     dry: true,
     vegan: true,
     name: "(GITS)Veg Biryani 265g",
@@ -31,7 +32,7 @@ const bestSeller = [
     href: "/collections/products/gits_biryani",
   },
   {
-    sellerImage: "/bannerImages/diyaset_2.webp",
+    sellerImage: "/rice_dal/rozanBasmatic.avif",
     dry: false,
     vegan: true,
     name: "Diya(Indian Lamp) Set",
@@ -53,23 +54,24 @@ const Collections = ({ params }) => {
   const { category } = params;
   const router = useRouter();
 
-  const formattedCategory = category
-    ? String(category).includes("-") //-- check whether the category contents the hypen and as per that format the category
-      ? String(category)
-          .split("-") // Split at hyphens
-          .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize each word
-          .join("&") // Join with '&'
-      : String(category)
-          .split(" ")
-          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-          .join(" ")
-    : "All Products";
+  console.log(category);
+
+  const formattedCategory = String(category).includes("-") //-- check whether the category contents the hypen and as per that format the category
+    ? String(category)
+        .split("-") // Split at hyphens
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize each word
+        .join("&") // Join with '&'
+    : String(category)
+        .split(" ")
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
 
   return (
     <div className="">
       <div className="flex flex-col gap-2">
         <h1 className="text-3xl font-bold">{formattedCategory}</h1>
         <MobileFilterSort />
+        <WebFilterSort />
         <div className="grid grid-cols-2  sm:grid-cols-3 md:grid-cols-4 my-10 gap-5">
           {bestSeller.map((seller, index) => {
             return <ProductDisplayCard key={index} product={seller} />;
