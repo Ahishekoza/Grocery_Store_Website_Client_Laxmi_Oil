@@ -5,20 +5,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 
-const ProductDisplayCard = ({ product }) => {
+const ProductDisplayCard = ({ product,likeThis }) => {
+
   return (
     <div
       className="flex flex-col gap-1 w-full h-full relative  px-1   py-1"
     >
       <Link
         href={product.href}
-        className=" overflow-hidden   flex justify-center items-center lg:p-5 sm:p-3"
+        className=" overflow-hidden   flex justify-center items-center xl:p-5 sm:p-3"
       >
         <Image
           src={product.sellerImage}
           width={1000}
           height={1000}
-          className="h-full  md:px-2 lg:px-5  w-[100%]  hover:scale-110 transition-all duration-300 ease-in-out  object-cover"
+          className={`${ likeThis ? "h-36 object-contain":"h-full object-cover"} md:px-2 xl:px-5  w-[100%]  hover:scale-110 transition-all duration-300 ease-in-out `}
           alt="best_seller"
         />
       </Link>
