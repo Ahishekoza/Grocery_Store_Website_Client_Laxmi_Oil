@@ -2,6 +2,13 @@ import BestSeller from "./components/best-seller";
 import HeroCarousel from "./components/hero-carousel";
 import ProductCategory from "./components/product-category";
 
+
+export const metadata = {
+  title: "New Laxmi Oil And Sugar Depot ",
+  description: "One stop for all your grocery needs",
+};
+
+
 export default function Home() {
   return (
     <div className="flex flex-col gap-5  mt-5 ">

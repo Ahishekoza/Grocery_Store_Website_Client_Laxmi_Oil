@@ -21,6 +21,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
 } from "@/components/ui/carousel";
 
 const bestSeller = [
@@ -59,9 +61,8 @@ const bestSeller = [
 ];
 
 const ProductInfo = ({ params: { productId } }) => {
-
   // ---productId
-  // ---Fetch the product info on the basis of the productId and related products (limit 4 ) 
+  // ---Fetch the product info on the basis of the productId and related products (limit 4 )
   // ---and then change the content dynamically
 
   return (
@@ -156,24 +157,27 @@ const ProductInfo = ({ params: { productId } }) => {
       </div>
 
       {/* ---Similar Liked Content */}
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-5 ">
         <span className="text-xl font-bold">You may like this</span>
 
         {/* --Mobile Nav Carousel */}
         <Carousel className="block md:hidden">
-          <CarouselContent >
+          <CarouselContent>
             {bestSeller.map((product, index) => {
               return (
                 <CarouselItem key={index} className=" basis-1/2">
-                  <div >
+                  <div>
                     <ProductDisplayCard product={product} likeThis={true} />
                   </div>
                 </CarouselItem>
               );
             })}
           </CarouselContent>
+          <div className="absolute  -bottom-8   right-[20%]">
+            <CarouselPrevious />
+            <CarouselNext />
+          </div>
         </Carousel>
-
 
         {/* Web Nav Like This */}
         <div className="hidden md:grid  md:grid-cols-4 gap-4">
@@ -182,8 +186,6 @@ const ProductInfo = ({ params: { productId } }) => {
           })}
         </div>
       </div>
-
-
     </div>
   );
 };
