@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
-import { SignedOut, SignInButton } from "@clerk/nextjs";
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import { Search, ShoppingCart, User2Icon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import UserMenu from "./user-menu";
 
 const WebNav = () => {
   return (
@@ -37,6 +38,9 @@ const WebNav = () => {
               </Button>
             </SignInButton>
           </SignedOut>
+          <SignedIn>
+            <UserMenu />
+          </SignedIn>
           <Button
             variant="outline"
             className="rounded-full bg-black text-white "
